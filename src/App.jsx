@@ -28,6 +28,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <h2>Audio Sample</h2>
+        <p><a href="media/spanish.mp3">play audio</a></p>
         <h2>Skills to Learn</h2>
         {skillItems.map(skillItem => {
           return (
