@@ -31,7 +31,7 @@ function App() {
         <h2>Audio Sample</h2>
         <p><a href="media/spanish.mp3">play audio</a></p>
         <h2>Webentwicklung leicht gemacht</h2>
-        <p><a href="https://ltn003.netlify.app">zur Sweetstack Site</a></p>
+        <p><a href="https://ltn003.netlify.app">Zur Sweetstack Site</a></p>
         <h2>Skills zu lernen</h2>
         {skillItems.map(skillItem => {
           return (
