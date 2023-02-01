@@ -1,9 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import axios from 'axios';
+
+const url = 'https://edwardtanguay.vercel.app/share/techItems.json';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [skillItems, setSkillItems] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get(url);
+      const _skillItems = response.data;
+      setSkillItems([..._skillItems]);
+    })();
+  });
 
   return (
     <div className="App">
@@ -18,9 +29,18 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <h2>Skills to Learn</h2>
-        <ul>
-          <li>nnn</li>
-        </ul>
+        {skillItems.map(skillItem => {
+          return (
+            <>
+              <div key={skillItem.id}>
+                <div class="title">{skillItem.title}</div>
+                <div className="description">
+                  {skillItem.genericTermIdCode}
+                </div>
+              </div>
+            </>
+          )
+        })}
       </div>
     </div>
   )
